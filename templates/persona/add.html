@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Crear empleado
+{% endblock title %}
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        
+        <h1 class="cell">Crear persona</h1>
+        <form class="cell grid-x grid-margin-x" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="medium-6 cell">
+                <label for="">Nombres</label>
+                {{form.first_name}}
+            </div>
+            <div class="medium-6 cell">
+                <label for="">Apellidos</label>
+                {{form.last_name}}
+            </div>
+            <div class="medium-6 cell">
+                <label for="">Trabajo</label>
+                {{form.job}}
+            </div>
+            <div class="medium-6 cell">
+                <label for="">Departamento</label>
+                {{form.departamento}}
+            </div>
+            <div class="medium-12 cell">
+                <label for="">Habilidad</label>
+                {{form.habilidad}}
+            </div>
+            <div class="medium-12 cell">
+                <label for="">Foto</label>
+                {{form.avatar}}
+            </div>
+            <div class="medim-6 cell">
+
+                <button type="submit" class="success button">Guardar</button>
+            </div>
+        
+            
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+
+
